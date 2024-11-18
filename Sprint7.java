@@ -1,21 +1,28 @@
 import java.util.Scanner;
 public class Sprint7 {
+
     public static void main(String[] array){
         Scanner input = new Scanner(System.in);
 
         System.out.println("Introde un número del 1 al 20: ");
         int numero = leerEnteroValido (input);
 
-        int [] multiplos = new int [100];
+        int i = 0;
+        int multiplo = 0;
 
-        for(int i = 1; i < multiplos.length; i++){
-            multiplos[i]*= numero;
+        System.out.println("Los múltiplos de " + numero + " del 0 al 100 son: ");
+
+        //Calculamos los múltiplos
+        while (multiplo < 100) {
+                multiplo = i * numero;
+                i++;
+                // Mostramos los múltiplos
+                System.out.println(multiplo);         
         }
-        System.out.println("Los múltiplos de " + numero+ " del 0 al " + multiplos.length+ " son: "+multiplos[i]);
-
     }
 
     public static int leerEnteroValido(Scanner input) {
+        
         boolean NoEsValido = true;
         int numero = 0;
         while (NoEsValido) {
@@ -28,7 +35,6 @@ public class Sprint7 {
                 }
             } else {
                 System.out.println("Error: Introduzca un número entero válido.");
-                input.next(); // Sustituir la entrada no válida
             }
         }
         return numero;
